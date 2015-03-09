@@ -1,0 +1,11 @@
+<query id="getDocumentRegdate" action="select">
+    <tables>
+        <table name="documents" />
+    </tables>
+    <columns>
+        <column name="regdate"/>
+    </columns>
+    <conditions>
+        <condition operation="equal" column="document_srl" var="document_srl" filter="number" notnull="notnull" />
+    </conditions>
+</query>
