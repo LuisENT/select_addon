@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">선택 애드온</title>
+    <description xml:lang="ko">선택만으로 애드온을 간단하게 만들어볼 수 있습니다.</description>
+    <version>1.0</version>
+    <date>2015-03-05</date>
+    <author email_address="" link="">
+        <name>KDP</name>
+    </author>
+	
+    <extra_vars>
+		<group>
+		<title xml:lang="ko">설명서</title>
+		<var name="readme_open" type="select">
+			<title xml:lang="ko">설명서</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="information_installed" type="text">
+            <title xml:lang="ko"></title>
+			<description xml:lang="ko"></description>
+        </var>
+		<var name="user_readme" type="text">
+            <title xml:lang="ko"></title>
+        </var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">정보</title>
+		<var name="show_member_list" type="text">
+            <title xml:lang="ko">현재 설정된 멤버그룹</title>
+        </var>
+		<var name="today_mid" type="text">
+            <title xml:lang="ko">게시글을 카운트할 게시판</title>
+			<description xml:lang="ko">MID값 입력.</description>
+        </var>
+		<var name="show_today_document" type="text">
+            <title xml:lang="ko">오늘 작성된 글</title>
+        </var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">체크</title>
+		<var name="chk_a" type="select">
+			<title xml:lang="ko">대상A값 출력</title>
+			<description xml:lang="ko">A값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="chk_b" type="select">
+			<title xml:lang="ko">대상B값 출력</title>
+			<description xml:lang="ko">B값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		
+		<var name="chk_c" type="select">
+			<title xml:lang="ko">게시글 속성 출력</title>
+			<description xml:lang="ko">게시글 속성값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="chk_info" type="select">
+			<title xml:lang="ko">애드온 정보 출력</title>
+			<description xml:lang="ko">애드온 정보값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="chk_status" type="select">
+			<title xml:lang="ko">상태값 출력</title>
+			<description xml:lang="ko">상태값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="chk_context" type="select">
+			<title xml:lang="ko">Context 출력</title>
+			<description xml:lang="ko">Context값을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">조건식</title>
+		<var name="check_rule" type="textarea">
+            <title xml:lang="ko">조건식</title>
+        </var>
+		<var name="calc_target_a" type="select">
+			<title xml:lang="ko">대상A</title>
+			<description xml:lang="ko">비교(확인)할 대상을 설정합니다. * 대상A를 타겟으로 잡아야합니다</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="browser_title">
+				<title xml:lang="ko">브라우져 타이틀</title>
+			</options>
+			<options value="text">
+				<title xml:lang="ko">텍스트</title>
+			</options>
+			<options value="title_len">
+				<title xml:lang="ko">제목 길이</title>
+			</options>
+			<options value="mid">
+				<title xml:lang="ko">mid</title>
+			</options>
+			<options value="nick_name">
+				<title xml:lang="ko">닉네임</title>
+			</options>
+			<options value="page">
+				<title xml:lang="ko">페이지</title>
+			</options>
+			<options value="search_target">
+				<title xml:lang="ko">검색 대상</title>
+			</options>
+			<options value="search_keyword">
+				<title xml:lang="ko">검색어</title>
+			</options>
+			<options value="user_agent">
+				<title xml:lang="ko">User Agent</title>
+			</options>
+			<options value="referer">
+				<title xml:lang="ko">피러퍼</title>
+			</options>
+			<options value="weblanguage">
+				<title xml:lang="ko">웹페이지 언어</title>
+			</options>
+			<options value="encord_accept">
+				<title xml:lang="ko">압축전송 유무</title>
+			</options>
+			<options value="url">
+				<title xml:lang="ko">현재 URL</title>
+			</options>
+			<options value="url_http">
+				<title xml:lang="ko">현재 주소</title>
+			</options>
+			<options value="point">
+				<title xml:lang="ko">포인트</title>
+			</options>
+			<options value="member_group">
+				<title xml:lang="ko">멤버 그룹</title>
+			</options>
+			<options value="comment_count">
+				<title xml:lang="ko">게시물 댓글수</title>
+			</options>
+			<options value="level">
+				<title xml:lang="ko">레벨</title>
+			</options>
+			<options value="odoc_member_srl">
+				<title xml:lang="ko">글작성자 멤버번호</title>
+			</options>
+			<options value="member_srl">
+				<title xml:lang="ko">멤버번호</title>
+			</options>
+			<options value="nextsequence">
+				<title xml:lang="ko">새 문서번호</title>
+			</options>
+			<options value="odoc_ip_address">
+				<title xml:lang="ko">게시글 작성자 IP 주소</title>
+			</options>
+			<options value="ip_address">
+				<title xml:lang="ko">IP 주소</title>
+			</options>
+			<options value="ip_proxy_address">
+				<title xml:lang="ko">Proxy 경유 IP 주소</title>
+			</options>
+			<options value="document_srl">
+				<title xml:lang="ko">문서번호</title>
+			</options>
+			<options value="user_id">
+				<title xml:lang="ko">아이디</title>
+			</options>
+			<options value="password">
+				<title xml:lang="ko">비밀번호</title>
+			</options>
+			<options value="regdate">
+				<title xml:lang="ko">글등록일(Ymd)</title>
+			</options>
+			<options value="date">
+				<title xml:lang="ko">해당날짜</title>
+			</options>
+			<options value="monthago">
+				<title xml:lang="ko">$달전 날짜</title>
+			</options>
+			<options value="weekago">
+				<title xml:lang="ko">$주전 날짜</title>
+			</options>
+			<options value="dayago">
+				<title xml:lang="ko">$일전 날짜</title>
+			</options>
+			<options value="hoursago">
+				<title xml:lang="ko">$시전 날짜</title>
+			</options>
+			<options value="secondsago">
+				<title xml:lang="ko">$초전 날짜</title>
+			</options>
+		</var>
+		<var name="target_a_text" type="text">
+            <title xml:lang="ko">대상A 텍스트</title>
+			<description xml:lang="ko">대상A를 텍스트로 설정했을때만 활성화됩니다.</description>
+        </var>
+		<var name="target_a_target" type="text">
+            <title xml:lang="ko">대상A 설정</title>
+			<description xml:lang="ko">($)설정값이 필요한 옵션에 값을 등록합니다.</description>
+        </var>
+		<var name="target_a_numberic" type="select">
+			<title xml:lang="ko">대상A 카운트 변환</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">인식</title>
+			</options>
+		</var>
+		<var name="calc_type" type="select">
+			<title xml:lang="ko">비교</title>
+			<description xml:lang="ko">조건 비교식을 설정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="null">
+				<title xml:lang="ko">NULL</title>
+			</options>
+			<options value="and">
+				<title xml:lang="ko">AND</title>
+			</options>
+			<options value="or">
+				<title xml:lang="ko">OR</title>
+			</options>
+			<options value="abig">
+				<title xml:lang="ko">A가 B보다 크다</title>
+			</options>
+			<options value="bbig">
+				<title xml:lang="ko">A가 B보다 작다</title>
+			</options>
+			<options value="same_abig">
+				<title xml:lang="ko">A가 B보다 같거나 크다</title>
+			</options>
+			<options value="same_bbig">
+				<title xml:lang="ko">A가 B보다 같거나 작다</title>
+			</options>
+		</var>
+		<var name="calc_target_b" type="select">
+			<title xml:lang="ko">대상B</title>
+			<description xml:lang="ko">비교(확인)할 대상을 설정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="text">
+				<title xml:lang="ko">텍스트</title>
+			</options>
+			<options value="title_len">
+				<title xml:lang="ko">제목 길이</title>
+			</options>
+			<options value="mid">
+				<title xml:lang="ko">mid</title>
+			</options>
+			<options value="nick_name">
+				<title xml:lang="ko">닉네임</title>
+			</options>
+			<options value="page">
+				<title xml:lang="ko">페이지</title>
+			</options>
+			<options value="search_target">
+				<title xml:lang="ko">검색 대상</title>
+			</options>
+			<options value="search_keyword">
+				<title xml:lang="ko">검색어</title>
+			</options>
+			<options value="user_agent">
+				<title xml:lang="ko">User Agent</title>
+			</options>
+			<options value="referer">
+				<title xml:lang="ko">피러퍼</title>
+			</options>
+			<options value="weblanguage">
+				<title xml:lang="ko">웹페이지 언어</title>
+			</options>
+			<options value="encord_accept">
+				<title xml:lang="ko">압축전송 유무</title>
+			</options>
+			<options value="url">
+				<title xml:lang="ko">현재 URL</title>
+			</options>
+			<options value="url_http">
+				<title xml:lang="ko">현재 주소</title>
+			</options>
+			<options value="point">
+				<title xml:lang="ko">포인트</title>
+			</options>
+			<options value="member_group">
+				<title xml:lang="ko">멤버 그룹</title>
+			</options>
+			<options value="comment_count">
+				<title xml:lang="ko">게시물 댓글수</title>
+			</options>
+			<options value="level">
+				<title xml:lang="ko">레벨</title>
+			</options>
+			<options value="odoc_member_srl">
+				<title xml:lang="ko">글작성자 멤버번호</title>
+			</options>
+			<options value="member_srl">
+				<title xml:lang="ko">멤버번호</title>
+			</options>
+			<options value="nextsequence">
+				<title xml:lang="ko">새 문서번호</title>
+			</options>
+			<options value="odoc_ip_address">
+				<title xml:lang="ko">게시글 작성자 IP 주소</title>
+			</options>
+			<options value="ip_address">
+				<title xml:lang="ko">IP 주소</title>
+			</options>
+			<options value="ip_proxy_address">
+				<title xml:lang="ko">Proxy 경유 IP 주소</title>
+			</options>
+			<options value="document_srl">
+				<title xml:lang="ko">문서번호</title>
+			</options>
+			<options value="user_id">
+				<title xml:lang="ko">아이디</title>
+			</options>
+			<options value="password">
+				<title xml:lang="ko">비밀번호</title>
+			</options>
+			<options value="regdate">
+				<title xml:lang="ko">글등록일(Ymd)</title>
+			</options>
+			<options value="date">
+				<title xml:lang="ko">해당날짜</title>
+			</options>
+			<options value="monthago">
+				<title xml:lang="ko">$달전 날짜</title>
+			</options>
+			<options value="weekago">
+				<title xml:lang="ko">$주전 날짜</title>
+			</options>
+			<options value="dayago">
+				<title xml:lang="ko">$일전 날짜</title>
+			</options>
+			<options value="hoursago">
+				<title xml:lang="ko">$시전 날짜</title>
+			</options>
+			<options value="secondsago">
+				<title xml:lang="ko">$초전 날짜</title>
+			</options>
+		</var>
+		<var name="target_b_text" type="text">
+            <title xml:lang="ko">대상B 텍스트</title>
+			<description xml:lang="ko">대상A를 텍스트로 설정했을때만 활성화됩니다.</description>
+        </var>
+		<var name="target_b_target" type="text">
+            <title xml:lang="ko">대상B설정</title>
+			<description xml:lang="ko">($)설정값이 필요한 옵션에 값을 등록합니다.</description>
+        </var>
+		<var name="target_b_numberic" type="select">
+			<title xml:lang="ko">대상B 카운트 변환</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">인식</title>
+			</options>
+		</var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">조건</title>
+		<var name="get_method" type="select">
+			<title xml:lang="ko">요청방식</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="html">
+				<title xml:lang="ko">HTML</title>
+			</options>
+			<options value="xmlrpc">
+				<title xml:lang="ko">XMLRPC</title>
+			</options>
+			<options value="json">
+				<title xml:lang="ko">JSON</title>
+			</options>
+		</var>
+		<var name="doc_attr" type="select">
+			<title xml:lang="ko">게시물 속성 확인</title>
+			<description xml:lang="ko">게시글의 속성을 확인합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="is_notice">
+				<title xml:lang="ko">공지사항 여부</title>
+			</options>
+			<options value="comment_status">
+				<title xml:lang="ko">댓글 허용 여부</title>
+			</options>
+			<options value="status">
+				<title xml:lang="ko">공개 여부</title>
+			</options>
+			<options value="title_bold">
+				<title xml:lang="ko">제목 굵게 여부</title>
+			</options>
+		</var>
+		<var name="act_position" type="select">
+			<title xml:lang="ko">애드온 시점</title>
+			<description xml:lang="ko">애드온이 실행되는 시점을 설정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="before_module_init">
+				<title xml:lang="ko">모듈 객체 생성 이전</title>
+			</options>
+			<options value="before_module_proc">
+				<title xml:lang="ko">모듈 실행 이전</title>
+			</options>
+			<options value="after_module_proc">
+				<title xml:lang="ko">모듈의 동작 이후</title>
+			</options>
+			<options value="before_display_content">
+				<title xml:lang="ko">결과 출력 이전</title>
+			</options>
+		</var>
+		<var name="act_agent" type="select">
+			<title xml:lang="ko">환경</title>
+			<description xml:lang="ko">애드온이 실행될 환경을 설정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">모든환경</title>
+			</options>
+			<options value="pc">
+				<title xml:lang="ko">PC</title>
+			</options>
+			<options value="mobile">
+				<title xml:lang="ko">Mobile</title>
+			</options>
+		</var>
+		<var name="act_called" type="select">
+            <title xml:lang="ko">애드온이 활성될 시점</title>
+			<description xml:lang="ko">애드온이 활성화될 시점을 설정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="dispBoardContent_Document">
+				<title xml:lang="ko">게시물 보기</title>
+			</options>
+            <options value="procBoardInsertDocument">
+				<title xml:lang="ko">게시글 작성 완료</title>
+			</options>
+			<options value="procBoardDeleteDocument">
+				<title xml:lang="ko">게시글 삭제 완료</title>
+			</options>
+			<options value="procBoardVoteDocument">
+				<title xml:lang="ko">게시글 추천 완료</title>
+			</options>
+			<options value="procBoardInsertComment">
+				<title xml:lang="ko">댓글 입력 완료</title>
+			</options>
+			<options value="procBoardDeleteComment">
+				<title xml:lang="ko">댓글 삭제 완료</title>
+			</options>
+			<options value="procBoardDeleteComment">
+				<title xml:lang="ko">댓글 삭제 완료</title>
+			</options>
+			<options value="procDocumentTempSave">
+				<title xml:lang="ko">게시글 임시저장 완료</title>
+			</options>
+			<options value="procDocumentVoteDown">
+				<title xml:lang="ko">게시글 비추천 완료</title>
+			</options>
+			<options value="procDocumentVoteUp">
+				<title xml:lang="ko">게시글 추천 완료</title>
+			</options>
+			<options value="procDocumentDeclare">
+				<title xml:lang="ko">게시글 신고 완료</title>
+			</options>
+			<options value="procEditorSaveDoc">
+				<title xml:lang="ko">에디터 저장 완료</title>
+			</options>
+			<options value="procEditorCall">
+				<title xml:lang="ko">에디터 불러오기 완료</title>
+			</options>
+			<options value="procEditorLoadSavedDocument">
+				<title xml:lang="ko">에디터 저장문서 불러오기 완료</title>
+			</options>
+			<options value="procEditorRemoveSavedDoc">
+				<title xml:lang="ko">에디터 저장문서 제거 완료</title>
+			</options>
+			<options value="dispBoardContent">
+				<title xml:lang="ko">게시판 보기</title>
+			</options>
+			<options value="dispBoardCategoryList">
+				<title xml:lang="ko">게시판 카테고리 보기</title>
+			</options>
+			<options value="dispBoardContentView">
+				<title xml:lang="ko">게시판 내용 보기</title>
+			</options>
+			<options value="dispBoardContentCommentList">
+				<title xml:lang="ko">게시판 댓글목록 보기</title>
+			</options>
+			<options value="dispBoardNoticeList">
+				<title xml:lang="ko">게시판 공지사항 보기</title>
+			</options>
+			<options value="dispBoardTagList">
+				<title xml:lang="ko">게시판 태그 보기</title>
+			</options>
+			<options value="dispBoardWrite">
+				<title xml:lang="ko">게시판 글 쓰기</title>
+			</options>
+			<options value="dispBoardDelete">
+				<title xml:lang="ko">게시판 글 삭제</title>
+			</options>
+			<options value="dispBoardWriteComment">
+				<title xml:lang="ko">게시판 댓글 작성</title>
+			</options>
+			<options value="dispBoardReplyComment">
+				<title xml:lang="ko">게시판 대댓글 작성</title>
+			</options>
+			<options value="dispBoardModifyComment">
+				<title xml:lang="ko">게시판 댓글 수정</title>
+			</options>
+			<options value="dispBoardDeleteComment">
+				<title xml:lang="ko">게시판 댓글 삭제</title>
+			</options>
+			<options value="procCommentVoteUp">
+				<title xml:lang="ko">댓글 추천 완료</title>
+			</options>
+			<options value="procCommentVoteDown">
+				<title xml:lang="ko">댓글 비추천 완료</title>
+			</options>
+			<options value="procCommentDeclare">
+				<title xml:lang="ko">댓글 신고 완료</title>
+			</options>
+			<options value="procCommentGetList">
+				<title xml:lang="ko">댓글 전체 리스트 조회 완료</title>
+			</options>
+			<options value="procCommunicationUpdateAllowMessage">
+				<title xml:lang="ko">쪽지 설정 업데이트 완료</title>
+			</options>
+			<options value="procCommunicationAddFriend">
+				<title xml:lang="ko">친구 추가 완료</title>
+			</options>
+			<options value="procCommunicationAddFriendGroup">
+				<title xml:lang="ko">친구 그룹 추가 완료</title>
+			</options>
+			<options value="procCommunicationDeleteFriend">
+				<title xml:lang="ko">친구 제거 완료</title>
+			</options>
+			<options value="procCommunicationDeleteFriendGroup">
+				<title xml:lang="ko">친구 그룹 제거 완료</title>
+			</options>
+			<options value="procCommunicationDeleteMessage">
+				<title xml:lang="ko">친구 쪽지 제거 완료</title>
+			</options>
+			<options value="procCommunicationDeleteMessages">
+				<title xml:lang="ko">친구 전체쪽지 제거 완료</title>
+			</options>
+			<options value="procCommunicationMoveFriend">
+				<title xml:lang="ko">친구 이동 완료</title>
+			</options>
+			<options value="procCommunicationRenameFriendGroup">
+				<title xml:lang="ko">친구 이름 변경 완료</title>
+			</options>
+			<options value="procCommunicationSendMessage">
+				<title xml:lang="ko">쪽지 보내기 완료</title>
+			</options>
+			<options value="procCommunicationStoreMessage">
+				<title xml:lang="ko">쪽지 저장 완료</title>
+			</options>
+			<options value="procCommunicationStoreMessage">
+				<title xml:lang="ko">쪽지 저장 완료</title>
+			</options>
+			<options value="dispCommunicationAddFriend">
+				<title xml:lang="ko">친구 추가</title>
+			</options>
+			<options value="dispCommunicationAddFriendGroup">
+				<title xml:lang="ko">친구 그룹 추가</title>
+			</options>
+			<options value="dispCommunicationFriend">
+				<title xml:lang="ko">친구 그룹 확인</title>
+			</options>
+			<options value="dispCommunicationMessages">
+				<title xml:lang="ko">쪽지 보기</title>
+			</options>
+			<options value="dispCommunicationNewMessage">
+				<title xml:lang="ko">새로운 쪽지 표시</title>
+			</options>
+			<options value="dispCommunicationSendMessage">
+				<title xml:lang="ko">쪽지 전송</title>
+			</options>
+			<options value="dispDocumentPrint">
+				<title xml:lang="ko">게시글 인쇄</title>
+			</options>
+			<options value="dispDocumentPreview">
+				<title xml:lang="ko">게시글 미리보기</title>
+			</options>
+			<options value="dispEditorPopup">
+				<title xml:lang="ko">에디터 컴포넌트 창 보기</title>
+			</options>
+			<options value="dispEditorComponentInfo">
+				<title xml:lang="ko">에디터 컴포넌트 정보창 보기</title>
+			</options>
+			<options value="dispEditorPreview">
+				<title xml:lang="ko">에디터 미리보기</title>
+			</options>
+			<options value="dispEditorSkinColorset">
+				<title xml:lang="ko">에디터 스킨 컬러셋 보기</title>
+			</options>
+			<options value="procFileDelete">
+				<title xml:lang="ko">파일 삭제 완료</title>
+			</options>
+			<options value="procFileDownload">
+				<title xml:lang="ko">파일 다운로드 완료</title>
+			</options>
+			<options value="procFileGetList">
+				<title xml:lang="ko">파일 리스트 조회 완료</title>
+			</options>
+			<options value="procFileIframeUpload">
+				<title xml:lang="ko">Iframe 업로드 완료</title>
+			</options>
+			<options value="procFileImageResize">
+				<title xml:lang="ko">이미지 리사이즈 완료</title>
+			</options>
+			<options value="procFileUpload">
+				<title xml:lang="ko">파일 업로드 완료</title>
+			</options>
+			<options value="IS">
+				<title xml:lang="ko">상단 검색 완료</title>
+			</options>
+			<options value="procMemberAuthAccount">
+				<title xml:lang="ko">가입인증 완료</title>
+			</options>
+			<options value="procMemberAuthEmailAddress">
+				<title xml:lang="ko">메일인증 완료</title>
+			</options>
+			<options value="procMemberCheckValue">
+				<title xml:lang="ko">멤버체크 완료</title>
+			</options>
+			<options value="procMemberDeleteImageMark">
+				<title xml:lang="ko">회원 이미지 마크 제거 완료</title>
+			</options>
+			<options value="procMemberDeleteImageName">
+				<title xml:lang="ko">회원 이미지 이름 제거 완료</title>
+			</options>
+			<options value="procMemberDeleteProfileImage">
+				<title xml:lang="ko">회원 프로파일 이미지 제거 완료</title>
+			</options>
+			<options value="procMemberDeleteSavedDocument">
+				<title xml:lang="ko">회원 저장문서 제거 완료</title>
+			</options>
+			<options value="procMemberDeleteScrap">
+				<title xml:lang="ko">회원 스크랩 제거 완료</title>
+			</options>
+			<options value="procMemberFindAccount">
+				<title xml:lang="ko">회원정보찾기 완료</title>
+			</options>
+			<options value="procMemberFindAccountByQuestion">
+				<title xml:lang="ko">회원정보찾기 질문/대답 완료</title>
+			</options>
+			<options value="procMemberInsert">
+				<title xml:lang="ko">회원가입추가 완료</title>
+			</options>
+			<options value="procMemberInsertImageMark">
+				<title xml:lang="ko">멤버 이미지 마크 추가 완료</title>
+			</options>
+			<options value="procMemberInsertImageName">
+				<title xml:lang="ko">멤버 이미지 이름 추가 완료</title>
+			</options>
+			<options value="procMemberInsertProfileImage">
+				<title xml:lang="ko">멤버 프로파일 이미지 추가 완료</title>
+			</options>
+			<options value="procMemberLeave">
+				<title xml:lang="ko">멤버 탈퇴 완료</title>
+			</options>
+			<options value="procMemberLogin">
+				<title xml:lang="ko">로그인 완료</title>
+			</options>
+			<options value="procMemberLogout">
+				<title xml:lang="ko">로그아웃 완료</title>
+			</options>
+			<options value="procMemberModifyEmailAddress">
+				<title xml:lang="ko">멤버 이메일주소 변경 완료</title>
+			</options>
+			<options value="procMemberModifyInfo">
+				<title xml:lang="ko">멤버 정보 변경 완료</title>
+			</options>
+			<options value="procMemberModifyInfoBefore">
+				<title xml:lang="ko">멤버 정보변정전</title>
+			</options>
+			<options value="procMemberModifyPassword">
+				<title xml:lang="ko">멤버 비밀번호 변경 완료</title>
+			</options>
+			<options value="procMemberResendAuthMail">
+				<title xml:lang="ko">멤버 인증 이메일 재전송 완료</title>
+			</options>
+			<options value="procMemberResetAuthMail">
+				<title xml:lang="ko">멤버 인증 이메일 재설정 완료</title>
+			</options>
+			<options value="procMemberSaveDocument">
+				<title xml:lang="ko">멤버 문서 저장 완료</title>
+			</options>
+			<options value="procMemberScrapDocument">
+				<title xml:lang="ko">멤버 문서 스크랩 완료</title>
+			</options>
+			<options value="procMemberSiteSignUp">
+				<title xml:lang="ko">가상사이트 연결 완료</title>
+			</options>
+			<options value="procMemberSpammerManage">
+				<title xml:lang="ko">스패머 관리 열기 완료</title>
+			</options>
+			<options value="procMemberUpdateAuthMail">
+				<title xml:lang="ko">인증 이메일 업데이트 완료</title>
+			</options>
+			<options value="dispMemberFindAccount">
+				<title xml:lang="ko">회원정보찾기</title>
+			</options>
+			<options value="dispMemberGetTempPassword">
+				<title xml:lang="ko">저장된 비밀번호 찾기</title>
+			</options>
+			<options value="dispMemberInfo">
+				<title xml:lang="ko">멤버 정보 보기</title>
+			</options>
+			<options value="dispMemberLeave">
+				<title xml:lang="ko">멤버 탈퇴</title>
+			</options>
+			<options value="dispMemberLoginForm">
+				<title xml:lang="ko">로그인</title>
+			</options>
+			<options value="dispMemberLogout">
+				<title xml:lang="ko">로그아웃</title>
+			</options>
+			<options value="dispMemberModifyEmailAddress">
+				<title xml:lang="ko">이메일 주소 변경</title>
+			</options>
+			<options value="dispMemberModifyInfo">
+				<title xml:lang="ko">멤버 정보 변경</title>
+			</options>
+			<options value="dispMemberModifyInfoBefore">
+				<title xml:lang="ko">멤버 정보 변경전</title>
+			</options>
+			<options value="dispMemberModifyPassword">
+				<title xml:lang="ko">멤버 암호 변경</title>
+			</options>
+			<options value="dispMemberOwnDocument">
+				<title xml:lang="ko">멤버 작성글</title>
+			</options>
+			<options value="dispMemberResendAuthMail">
+				<title xml:lang="ko">멤버 인증 이메일 재전송</title>
+			</options>
+			<options value="dispMemberSavedDocument">
+				<title xml:lang="ko">멤버 게시글 저장</title>
+			</options>
+			<options value="dispMemberScrappedDocument">
+				<title xml:lang="ko">멤버 게시글 스크랩</title>
+			</options>
+			<options value="dispMemberSignUpForm">
+				<title xml:lang="ko">멤버 가입</title>
+			</options>
+			<options value="dispMemberSpammer">
+				<title xml:lang="ko">멤버 스패머</title>
+			</options>
+			<options value="dispSavedDocumentList">
+				<title xml:lang="ko">멤버 저장문서목록</title>
+			</options>
+			<options value="dispPageIndex">
+				<title xml:lang="ko">페이지 보기</title>
+			</options>
+			<options value="procPoll">
+				<title xml:lang="ko">설문조사 참여</title>
+			</options>
+			<options value="procPollGetList">
+				<title xml:lang="ko">설문조사 리스트 확인</title>
+			</options>
+			<options value="procPollViewResult">
+				<title xml:lang="ko">설문조사 결과 확인</title>
+			</options>
+        </var>
+		<var name="act_add" type="select">
+            <title xml:lang="ko">추가조건</title>
+			<description xml:lang="ko">애드온을 적용할 대상을 지정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">회원/비회원/관리자</title>
+			</options>
+			<options value="member">
+				<title xml:lang="ko">회원/비회원</title>
+			</options>
+            <options value="same_member">
+				<title xml:lang="ko">글작성자</title>
+			</options>
+			<options value="notlogged">
+				<title xml:lang="ko">비회원</title>
+			</options>
+			<options value="logged">
+				<title xml:lang="ko">회원</title>
+			</options>
+		</var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">대상</title>
+		<var name="list_accept" type="select">
+			<title xml:lang="ko">리스트</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">인식</title>
+			</options>
+		</var>
+		<var name="list_target" type="select">
+			<title xml:lang="ko">리스트 대상</title>
+			<options value="">
+				<title xml:lang="ko">해당 페이지</title>
+			</options>
+			<options value="date">
+				<title xml:lang="ko">해당날짜</title>
+			</options>
+			<options value="monthago">
+				<title xml:lang="ko">$달전 날짜</title>
+			</options>
+			<options value="weekago">
+				<title xml:lang="ko">$주전 날짜</title>
+			</options>
+			<options value="dayago">
+				<title xml:lang="ko">$일전 날짜</title>
+			</options>
+			<options value="hoursago">
+				<title xml:lang="ko">$시전 날짜</title>
+			</options>
+			<options value="secondsago">
+				<title xml:lang="ko">$초전 날짜</title>
+			</options>
+		</var>
+		<var name="target_date_target" type="text">
+            <title xml:lang="ko">리스트 대상 설정</title>
+			<description xml:lang="ko">($)설정값이 필요한 옵션에 값을 등록합니다.</description>
+        </var>
+		<var name="list_position" type="select">
+			<title xml:lang="ko">위치</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="top_document">
+				<title xml:lang="ko">최상위의 게시글</title>
+			</options>
+			<options value="bottom_document">
+				<title xml:lang="ko">최하위의 게시글</title>
+			</options>
+		</var>
+		<var name="act_target" type="select">
+            <title xml:lang="ko">행동을 실행할 대상</title>
+			<description xml:lang="ko">애드온의 행동을 적용할 대상을 지정합니다.</description>
+			<options value="">
+				<title xml:lang="ko">자동</title>
+			</options>
+			<options value="crawler">
+				<title xml:lang="ko">크롤러</title>
+			</options>
+            <options value="writer">
+				<title xml:lang="ko">글작성자</title>
+			</options>
+			<options value="membersrls">
+				<title xml:lang="ko">대상자 Membersrl</title>
+			</options>
+		</var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">행동</title>
+		<var name="act_add" type="select">
+			<title xml:lang="ko">단순행동</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="logout">
+				<title xml:lang="ko">로그아웃</title>
+			</options>
+		</var>
+		<var name="doc_del_srl" type="text">
+            <title xml:lang="ko">삭제할 게시글 번호</title>
+			<description xml:lang="ko">기본값 : 현재문서</description>
+        </var>
+		<var name="msg_type" type="select">
+			<title xml:lang="ko">메시지 종류</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="alert_stop">
+				<title xml:lang="ko">Stop</title>
+			</options>
+			<options value="alert_exit">
+				<title xml:lang="ko">Exit</title>
+			</options>
+			<options value="alert_echo">
+				<title xml:lang="ko">Echo</title>
+			</options>
+			<options value="alert_jsalert">
+				<title xml:lang="ko">Echo JS Alert</title>
+			</options>
+			<options value="alert_jsheader">
+				<title xml:lang="ko">Header JS Alert</title>
+			</options>
+		</var>
+		<var name="add_notice" type="select">
+			<title xml:lang="ko">공지사항 등록</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="doc_delete" type="select">
+			<title xml:lang="ko">게시글 삭제</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="title_input" type="textarea">
+            <title xml:lang="ko">제목</title>
+            <description xml:lang="ko">제목에 입력할 내용.</description>
+        </var>
+		<var name="content_input" type="textarea">
+            <title xml:lang="ko">내용</title>
+            <description xml:lang="ko">내용에 입력할 내용.</description>
+        </var>
+		<var name="msg_title" type="textarea">
+            <title xml:lang="ko">메시지</title>
+            <description xml:lang="ko">메시지에 표시할 내용.</description>
+        </var>
+		<var name="browser_title" type="text">
+            <title xml:lang="ko">브라우져 제목</title>
+			<description xml:lang="ko">브라우져의 제목을 바꿉니다.</description>
+        </var>
+		<var name="msg" type="text">
+            <title xml:lang="ko">쪽지(제목)</title>
+        </var>
+		<var name="msg_content" type="textarea">
+            <title xml:lang="ko">쪽지 내용</title>
+        </var>
+		<var name="msg_receiver" type="text">
+            <title xml:lang="ko">쪽지를 받는 멤버번호</title>
+			<description xml:lang="ko">기본값 : 현재멤버</description>
+        </var>
+		<var name="msg_sender" type="text">
+            <title xml:lang="ko">쪽지를 보내는 멤버번호</title>
+			<description xml:lang="ko">기본값 : 현재멤버</description>
+        </var>
+		<var name="addpoint" type="text">
+            <title xml:lang="ko">포인트 획득</title>
+            <description xml:lang="ko">포인트를 획득합니다.</description>
+        </var>
+		<var name="minuspoint" type="text">
+            <title xml:lang="ko">포인트 회수</title>
+            <description xml:lang="ko">포인트를 회수합니다.</description>
+        </var>
+		</group>
+		
+		<group>
+		<title xml:lang="ko">내용 교체</title>
+		<var name="strreplace" type="select">
+			<title xml:lang="ko">내용 교체</title>
+			<options value="">
+				<title xml:lang="ko">사용안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+		<var name="strtype" type="select">
+			<title xml:lang="ko">종류</title>
+			<options value="">
+				<title xml:lang="ko">일반</title>
+			</options>
+			<options value="preg">
+				<title xml:lang="ko">preg_replace</title>
+			</options>
+		</var>
+		<var name="search_content" type="textarea">
+            <title xml:lang="ko">찾을 내용</title>
+			<description xml:lang="ko"></description>
+        </var>
+		<var name="replace_content" type="textarea">
+            <title xml:lang="ko">바꿀 내용</title>
+        </var>
+		</group>
+    </extra_vars>
+</addon>
