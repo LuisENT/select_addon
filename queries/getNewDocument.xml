@@ -1,0 +1,12 @@
+<query id="getNewDocument" action="select">
+    <tables>
+        <table name="documents" />
+    </tables>
+    <columns>
+        <column name="*"/>
+    </columns>
+    <conditions>
+        <condition operation="in" column="documents.module_srl" var="module_srl" filter="number" notnull="notnull" pipe="and"/>
+        <condition operation="more" column="documents.regdate" var="r_regdate" filter="number" notnull="notnull" pipe="and"/>
+    </conditions>
+</query>
